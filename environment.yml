@@ -1,0 +1,18 @@
+name: docs-post
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.10
+  - pip
+  - sphinx
+  - sphinx-copybutton
+  - sphinx-design
+  - myst-nb
+  - pydata-sphinx-theme
+  # - numpydoc
+  # - pip:
+    # - sphinx-gallery
+    # - sphinx-cjkspace
+    # - sphinx-panels
+    # - sphinx-icon
