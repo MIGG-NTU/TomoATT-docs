@@ -7,18 +7,41 @@ optinal:
 - HDF5 (parallel IO needs to be enabled)
 - h5py (used in pre/post processes examples)
 
-## to clone
+
+### Install dependence from Conda
+
+#### Create a conda environment
+
+```
+conda create --name tomoatt --channel conda-forge
+```
+
+Then activate the virtual environment
+
+```
+conda activate tomoatt
+```
+
+#### Install dependence
+
+```
+conda install openmpi "hdf5=*=mpi_openmpi*"
+```
+
+## Clone the source codes
+
 ``` bash
 git clone --recursive https://github.com/mnagaso/TomoATT.git
 ```
 
-## to compile
+## Compile source codes
+
 ``` bash
 mkdir build && cd build
-cmake .. && make -j 8
+cmake .. && make -j
 ```
 
 compile with cuda support
 ``` bash
-cmake .. -DUSE_CUDA=True && make -j 8
+cmake .. -DUSE_CUDA=True && make -j
 ``` 
