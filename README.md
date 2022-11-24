@@ -1,6 +1,6 @@
 # TomoATT Documentation
 
-This repository contain source codes of [TomoATT Documentation]() powered by Sphinx with [Pydata theme](https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html).
+This repository contains source codes of [TomoATT Documentation]() powered by Sphinx with [Pydata theme](https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html).
 
 ## Build a environment
 
