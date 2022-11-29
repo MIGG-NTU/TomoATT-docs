@@ -25,7 +25,7 @@ conda activate tomoatt
 #### Install dependence
 
 ```
-conda install openmpi "hdf5=*=mpi_openmpi*"
+conda install openmpi "hdf5=*=mpi_openmpi*" -c conda-forge
 ```
 
 ## Clone the source codes
