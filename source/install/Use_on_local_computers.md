@@ -87,7 +87,7 @@ make -j16 && make install
 ### Clone the source codes
 
 ``` bash
-git clone --recursive https://github.com/mnagaso/TomoATT.git
+git clone --recursive https://github.com/MIGG-NTU/TomoATT.git
 ```
 
 ### Compile source codes with cmake
