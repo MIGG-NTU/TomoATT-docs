@@ -80,6 +80,20 @@ CUDA implementation is now under development, which will be available in the fut
 Regional events (sources within the global domain) and teleseismic events (sources outside the global domain) may be used for inversion.
 
 
+<br />
+<br />
+<br />
+<br />
+
+
+# Citation
+If you use TomoATT for your own research, please cite at least one of the following articles:  
+- [Ping Tong (2021)](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2021JB021818), 
+- [Jing Chen et. al.(2022)](), 
+- ...
+
+
+
 
 
 ```{toctree}
