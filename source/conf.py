@@ -36,7 +36,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.mathjax',
     "myst_nb",
-    # "myst_parser",
+    #"myst_parser", # myst_nb overrides myst_parser
     'sphinx.ext.githubpages',
     "sphinx.ext.intersphinx",
     "sphinx_copybutton",

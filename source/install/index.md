@@ -1,47 +1,21 @@
 # Installation
 
-## dependency
+TomoATT is a C++ library, developed for working efficiently with parallel computing. For achieving a good IO performance, installing HDF5 with parallel IO option is highly recomended. TomoATT can also run in ASCII IO mode, but all the IO processes are run independently in this case rather than collectively, which causes a slowdown in IO performance.
+
+## Dependencies
+- [CMake](https://cmake.org/) (version 3.10 or higher)
+- C++ compiler which supports C++17 (version 7.0 or higher for GNU compiler. version 19.0 or higher for Intel compiler.)
 - MPI v3.0 or higher  
 
-optinal:
-- HDF5 (parallel IO needs to be enabled)
-- h5py (used in pre/post processes examples)
+## Optinal:
+- [HDF5](https://www.hdfgroup.org/solutions/hdf5/) (parallel IO needs to be enabled)
+- [h5py](https://www.h5py.org/) (used in pre/post processes examples)
 
 
-### Install dependence from Conda
+```{toctree}
+:hidden:
 
-#### Create a conda environment
-
-```
-conda create --name tomoatt --channel conda-forge
-```
-
-Then activate the virtual environment
-
-```
-conda activate tomoatt
+Use_on_local_computers
+Use_on_HPCs
 ```
 
-#### Install dependence
-
-```
-conda install openmpi "hdf5=*=mpi_openmpi*" -c conda-forge
-```
-
-## Clone the source codes
-
-``` bash
-git clone --recursive https://github.com/mnagaso/TomoATT.git
-```
-
-## Compile source codes
-
-``` bash
-mkdir build && cd build
-cmake .. && make -j
-```
-
-compile with cuda support
-``` bash
-cmake .. -DUSE_CUDA=True && make -j
-``` 
