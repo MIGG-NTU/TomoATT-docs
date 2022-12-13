@@ -37,8 +37,17 @@ As an input data for TomoATT is travel times at seismic stations, we can easily 
 :align: center
 ```
 
+
+
+```{image} _static/vel_anim.gif
+:alt: TomoATT velocity fitting
+:width: 65%
+:align: center
+```
+
 <br />
 <br />
+
 
 For modeling a very large and fine grid with numerous seismic events, this library applies 3-layer parallelization, which are:
 - layer 1: simulutaneous run parallelization (travel times for multiple seismic sources may be calculated simultaneously)
