@@ -7,7 +7,7 @@ TomoATT is a C++ library, developed for working efficiently with parallel comput
 - C++ compiler which supports C++17 (version 7.0 or higher for GNU compiler. version 19.0 or higher for Intel compiler.)
 - MPI v3.0 or higher  
 
-## Optinal:
+## Optional:
 - [HDF5](https://www.hdfgroup.org/solutions/hdf5/) (parallel IO needs to be enabled)
 - [h5py](https://www.h5py.org/) (used in pre/post processes examples)
 
