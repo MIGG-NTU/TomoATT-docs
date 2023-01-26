@@ -19,7 +19,7 @@ conda create --name tomoatt --channel conda-forge
 Then activate the virtual environment
 
 ```
-conda activate tomoatt
+source activate tomoatt
 ```
 
 #### Install the required libraries in the created virtual environment
