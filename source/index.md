@@ -98,8 +98,7 @@ Regional events (sources within the global domain) and teleseismic events (sourc
 # Citation
 If you use TomoATT for your own research, please cite at least one of the following articles:  
 - [Ping Tong (2021)](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2021JB021818), 
-- [Jing Chen et. al.(2022)](), 
-- ...
+- [Jing Chen et. al.(2023)](https://doi.org/10.1093/gji/ggad093), 
 
 
 
