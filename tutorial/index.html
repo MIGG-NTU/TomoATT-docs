@@ -1,0 +1,732 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Tutorial &#8212; TomoATT  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/index';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Examples" href="../examples/index.html" />
+    <link rel="prev" title="use on HPCs" href="../install/Use_on_HPCs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">TomoATT  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../install/index.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Tutorial
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../install/index.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Tutorial
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Tutorial</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="input-files">
+<h2>Input files<a class="headerlink" href="#input-files" title="Permalink to this heading">#</a></h2>
+<p>TomoATT requires 3 input files :</p>
+<ol class="arabic simple">
+<li><p>input parameter file (setup file for simulation parameters)</p></li>
+<li><p>source receiver file (source and receiver definitions and observation arrival times)</p></li>
+<li><p>initial model file (3d initial model)</p></li>
+</ol>
+<p>It is recommended to use TomoATT’s python API for creating the template project directory and input files.
+This library is available from <a class="reference external" href="https://github.com/MIGG-NTU/PyTomoATT/tree/devel">here</a>.</p>
+<p>This library is not yet available on PyPI, so you need to clone the repository and install it manually.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--branch<span class="w"> </span>devel<span class="w"> </span>https://github.com/MIGG-NTU/PyTomoATT/tree/devel
+<span class="nb">cd</span><span class="w"> </span>PyTomoATT
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</pre></div>
+</div>
+<p>After instaling PyTomoATT, you can create a template project directory with the following command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pta<span class="w"> </span>init_pjt<span class="w"> </span>path/to/project_dir
+</pre></div>
+</div>
+<p>Below is the explanation of each input file.</p>
+<section id="input-parameter-file">
+<h3>1. input parameter file<a class="headerlink" href="#input-parameter-file" title="Permalink to this heading">#</a></h3>
+<p>All the necessary parameters for setuping a calculation are described in input parameter file in <a class="reference external" href="https://en.wikipedia.org/wiki/YAML">yaml format</a>.</p>
+<p>Below is an example of input parameter file for making a forward simulation.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+
+<span class="nt">domain </span><span class="p">:</span>
+<span class="w">  </span><span class="nt">min_max_dep </span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">5740.6370</span><span class="p p-Indicator">,</span><span class="nv">5790.6370</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># depth in km</span>
+<span class="w">  </span><span class="nt">min_max_lat </span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">45.0</span><span class="p p-Indicator">,</span><span class="nv">55.0</span><span class="p p-Indicator">]</span><span class="w">           </span><span class="c1"># latitude in degree</span>
+<span class="w">  </span><span class="nt">min_max_lon </span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">35.0</span><span class="p p-Indicator">,</span><span class="nv">45.0</span><span class="p p-Indicator">]</span><span class="w">           </span><span class="c1"># longitude in degree</span>
+<span class="w">  </span><span class="nt">n_rtp </span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">40</span><span class="p p-Indicator">,</span><span class="nv">40</span><span class="p p-Indicator">,</span><span class="nv">40</span><span class="p p-Indicator">]</span><span class="w">                  </span><span class="c1"># number of nodes</span>
+
+<span class="nt">source </span><span class="p">:</span>
+<span class="w">  </span><span class="nt">src_rec_file </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;src_rec_test.dat&#39;</span><span class="w"> </span><span class="c1"># source receiver file</span>
+
+<span class="nt">model </span><span class="p">:</span>
+<span class="w">  </span><span class="nt">init_model_path </span><span class="p">:</span><span class="w"> </span><span class="s">&#39;./test_model_init.h5&#39;</span><span class="w"> </span><span class="c1"># path to initial model file</span>
+
+<span class="nt">inversion </span><span class="p">:</span>
+<span class="w">  </span><span class="nt">run_mode </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"> </span><span class="c1"># 0 for forward simulation only, 1 for inversion</span>
+
+<span class="nt">parallel </span><span class="p">:</span>
+<span class="w">  </span><span class="nt">n_sims </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">         </span><span class="c1"># number of simultaneous run</span>
+<span class="w">  </span><span class="nt">ndiv_rtp </span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="nv">1</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># number of subdomains</span>
+<span class="w">  </span><span class="nt">nproc_sub </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">      </span><span class="c1"># number of subprocess used for each subdomain</span>
+
+<span class="nt">calculation </span><span class="p">:</span>
+<span class="w">  </span><span class="nt">convergence_tolerance </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1e-6</span>
+<span class="w">  </span><span class="nt">max_iterations </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">  </span><span class="nt">stencil_order </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"> </span><span class="c1"># 1 or 3</span>
+<span class="w">  </span><span class="nt">sweep_type </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">   </span><span class="c1"># 0: legacy, 1: cuthill-mckee with shm parallelization</span>
+
+<span class="nt">output_setting </span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># output the calculated field of all sources. 1 for yes; 0 for no; default: 1</span>
+<span class="w">  </span><span class="nt">is_output_source_field </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">  </span><span class="c1"># output internal parameters, if no, only model parameters are out. 1 for yes; 0 for no;  default: 0</span>
+<span class="w">  </span><span class="nt">is_verbose_output </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w">           </span>
+<span class="w">  </span><span class="c1"># output model_parameters_inv_0000.dat or not. 1 for yes; 0 for no; default: 1</span>
+<span class="w">  </span><span class="nt">is_output_model_dat </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w">         </span>
+</pre></div>
+</div>
+<p>There are categories and sub-categories with setup parameters.
+Below is the explanation of each category and sub-category.
+If a category tag or sub-category tag is missing from the input parameter file, the default value will be used.</p>
+<section id="domain">
+<h4>domain :<a class="headerlink" href="#domain" title="Permalink to this heading">#</a></h4>
+<p>The domain category is for setting a global domain of the simulation.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">min_max_dep</span></code> : <code class="docutils literal notranslate"><span class="pre">[dep1,</span> <span class="pre">dep2]</span></code> minimum and maximum depth of the domain in kilo meter</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_max_lat</span></code> : <code class="docutils literal notranslate"><span class="pre">[lat1,</span> <span class="pre">lat2]</span></code> minimum and maximum latitude in degree</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_max_lon</span></code> : <code class="docutils literal notranslate"><span class="pre">[lon1,</span> <span class="pre">lon2]</span></code> minimum and maximum longitude in degree</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_rtp</span></code> : <code class="docutils literal notranslate"><span class="pre">[nr,</span> <span class="pre">nt,</span> <span class="pre">np]</span></code> number of computation nodes for r (depth),t (latitude) and p (longitude) direction</p></li>
+</ul>
+</section>
+<section id="source">
+<h4>source :<a class="headerlink" href="#source" title="Permalink to this heading">#</a></h4>
+<p>Source category is used for setting about source and receiver definitions.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">src_rec_file</span></code> : for specifying a path to a source receiver file (details of this file is in the following section). The calculated travel time at receivers will be output as a new source receiver file in OUTPUT_FILES directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">swap_src_rec</span></code> : <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code>. Set 1 for using receivers as sources, which reduces computation time when the number of sources are larger than the number of receivers. (usual when using a large dataset.)</p></li>
+</ul>
+</section>
+<section id="model">
+<h4>model :<a class="headerlink" href="#model" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">init_model_path</span></code> : File path for 3D initial model file. Details will be explained in the following section.</p></li>
+</ul>
+</section>
+<section id="inversion">
+<h4>inversion :<a class="headerlink" href="#inversion" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">run_mode</span></code> :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> for running only a forward simulation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> for do inversion.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> run earthquake relocation. For using this mode, <code class="docutils literal notranslate"><span class="pre">sources</span> <span class="pre">:</span> <span class="pre">swap_src_rec</span></code> need to be set to 1. Otherwise the program will exit with an error message.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_inversion_grid</span></code> :  the number of inversion grid.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_inv_dep_lat_lon</span></code> : the numbers of inversion grids for r, t and p direction.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_max_dep_inv</span></code> : <code class="docutils literal notranslate"><span class="pre">[dep1,</span> <span class="pre">dep2]</span></code> minimum and maximum depth of inversion grid in kilo meter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_max_lat_inv</span></code> : <code class="docutils literal notranslate"><span class="pre">[lat1,</span> <span class="pre">lat2]</span></code> minimum and maximum latitude of inversion grid in degree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_max_lon_inv</span></code> : <code class="docutils literal notranslate"><span class="pre">[lon1,</span> <span class="pre">lon2]</span></code> minimum and maximum longitude of inversion grid in degree.</p></li>
+</ul>
+<p>Currently, TomoATT provide two ways for defining the inversion grid. One is a regular grid (even intervals for all axis) type and another uses used defined intervals for each axis.</p>
+<p>For setting the user defined intervals, please use the flags below.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type_dep_inv</span></code> : <code class="docutils literal notranslate"><span class="pre">0</span></code> for regular grid (default), <code class="docutils literal notranslate"><span class="pre">1</span></code> for user defined intervals.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type_lat_inv</span></code> : <code class="docutils literal notranslate"><span class="pre">0</span></code> for regular grid (default), <code class="docutils literal notranslate"><span class="pre">1</span></code> for user defined intervals.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type_lon_inv</span></code> : <code class="docutils literal notranslate"><span class="pre">0</span></code> for regular grid (default), <code class="docutils literal notranslate"><span class="pre">1</span></code> for user defined intervals.</p></li>
+</ul>
+<p>and the coordinates where the main inversion grids are placed,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dep_inv</span></code> : <code class="docutils literal notranslate"><span class="pre">[z1,z2,z3,...]</span></code> for user defined intervals.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lat_inv</span></code> : <code class="docutils literal notranslate"><span class="pre">[y1,y2,y3,...]</span></code> for user defined intervals.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lon_inv</span></code> : <code class="docutils literal notranslate"><span class="pre">[x1,x2,x3,...]</span></code> for user defined intervals.</p></li>
+</ul>
+<p>other parameers for inversion seetting.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">max_iterations_inv</span></code> :  The limit of iteration number for inversion.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step_size</span></code> :  Maximum step size ratio for updating model.</p></li>
+</ul>
+</section>
+<section id="parallel">
+<h4>parallel :<a class="headerlink" href="#parallel" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n_sims</span></code> : number of simulutaneous run</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ndiv_rtp</span></code> : <code class="docutils literal notranslate"><span class="pre">[ndiv_r,</span> <span class="pre">ndiv_t,</span> <span class="pre">ndiv_p]</span></code>  number of domain decomposition on r, t and p direction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nproc_sub</span></code> : number of processes used for sweeping parallelization</p></li>
+</ul>
+<p>The total number of mpi processes (i.e. mpirun -n NUMBER) must be n_sims*ndiv_r*ndiv_t*ndiv_p*nproc_sub, otherwise the code will stop instantly.</p>
+</section>
+<section id="calculation">
+<h4>calculation :<a class="headerlink" href="#calculation" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">convergence_tolerance</span></code> : convergence criterion for forward and adjoint run.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_iterations</span></code> : number of maximum iteration for forward and adjoint run</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stencil_order</span></code> :  <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">3</span></code>. The order of stencil for sweeping.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sweep_type</span></code> :  <code class="docutils literal notranslate"><span class="pre">0</span></code>or <code class="docutils literal notranslate"><span class="pre">1</span></code>. 0 is for sweeping in legacy order (threefold loops on r,t and p), 1 for cuthill-mckee node ordering with sweeping parallelization.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">output_file_format</span></code> : <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code> for selecting input and output file format. <code class="docutils literal notranslate"><span class="pre">0</span></code> is for HDF5 format, <code class="docutils literal notranslate"><span class="pre">1</span></code> is for ASCII format.</p></li>
+</ul>
+</section>
+<section id="output-setting">
+<h4>output_setting :<a class="headerlink" href="#output-setting" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">is_output_source_field</span></code> : <code class="docutils literal notranslate"><span class="pre">0</span></code>(no) or <code class="docutils literal notranslate"><span class="pre">1</span></code>(yes). if output the calculated field of all sources.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_verbose_output</span></code> : <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code>. if output internal parameters, if no, only model parameters are out.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_output_model_dat</span></code> : <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code>. if output model_parameters_inv_0000.dat or not.</p></li>
+</ul>
+</section>
+</section>
+<section id="source-receiver-file">
+<h3>2. source receiver file<a class="headerlink" href="#source-receiver-file" title="Permalink to this heading">#</a></h3>
+<p>Source receiver file is a file which defines source and receiver positions and arrival times.</p>
+<p>Below is an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>   <span class="mi">1992</span>  <span class="mi">1</span>  <span class="mi">1</span>  <span class="mi">2</span> <span class="mi">43</span>  <span class="mf">56.900</span>    <span class="mf">1.8000</span>     <span class="mf">98.9000</span> <span class="mf">137.00</span>  <span class="mf">2.80</span>    <span class="mi">8</span>    <span class="mi">305644</span> <span class="o">&lt;-</span> <span class="n">source</span> <span class="mi">1</span>
+<span class="mi">1</span>      <span class="mi">1</span>      <span class="n">PCBI</span>       <span class="mf">1.8900</span>     <span class="mf">98.9253</span>   <span class="mf">1000.0000</span>  <span class="n">P</span>   <span class="mf">18.000</span>     <span class="o">&lt;-</span> <span class="n">receiver</span> <span class="mi">1</span>
+<span class="mi">1</span>      <span class="mi">2</span>      <span class="n">MRPI</span>       <span class="mf">1.6125</span>     <span class="mf">99.3172</span>   <span class="mf">1100.0000</span>  <span class="n">P</span>   <span class="mf">19.400</span>     <span class="o">&lt;-</span> <span class="n">receiver</span> <span class="mi">2</span>
+<span class="mi">1</span>      <span class="mi">3</span>      <span class="n">HUTI</span>       <span class="mf">2.3153</span>     <span class="mf">98.9711</span>   <span class="mf">1600.0000</span>  <span class="n">P</span>   <span class="mf">19.200</span>
+     <span class="o">....</span>
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Source</span> <span class="n">line</span> <span class="p">:</span> <span class="n">id_src</span> <span class="n">year</span> <span class="n">month</span> <span class="n">day</span> <span class="n">hour</span> <span class="nb">min</span> <span class="n">sec</span> <span class="n">lat</span> <span class="n">lon</span> <span class="n">dep_km</span> <span class="n">magnitude</span> <span class="n">num_recs</span> <span class="n">id_event</span> <span class="p">(</span><span class="n">weight</span><span class="p">)</span>
+<span class="n">Receiver</span> <span class="n">line</span> <span class="p">:</span> <span class="n">id_src</span> <span class="n">id_rec</span> <span class="n">name_rec</span> <span class="n">lat</span> <span class="n">lon</span> <span class="n">elevation_m</span> <span class="n">phase</span> <span class="n">arrival_time_sec</span> <span class="p">(</span><span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">num_recs</span></code> (number of receivers for this source) need to be the same with the number of receiver lines.
+The last column of both source and receiver line is for put weight (on objective function). These are the optional column and set to be 1.0 if not written.
+<code class="docutils literal notranslate"><span class="pre">name_rec</span></code> need to be different for each station.
+<code class="docutils literal notranslate"><span class="pre">lon</span></code> and <code class="docutils literal notranslate"><span class="pre">lat</span></code> are in degree.</p>
+<p>If the source position is out of the global domain (defined in input parameter file.), the code will flag this event as a teleseismic event and run the dedicated routine for teleseimic event. For teleseismic event, swap_src_rec will be ignored for this event (as the teleseismic case, a source is not a point but boundary surfaces).</p>
+</section>
+<section id="initial-model-file">
+<h3>3. initial model file<a class="headerlink" href="#initial-model-file" title="Permalink to this heading">#</a></h3>
+<p>Initial model file is used for defining parameters of input mode.
+Necessary parameters are <code class="docutils literal notranslate"><span class="pre">vel</span></code> (velocity), <code class="docutils literal notranslate"><span class="pre">eta</span></code>, <code class="docutils literal notranslate"><span class="pre">xi</span></code>, <code class="docutils literal notranslate"><span class="pre">zeta</span></code>.</p>
+<section id="inital-model-file-in-hdf5-format">
+<h4>inital model file in HDF5 format<a class="headerlink" href="#inital-model-file-in-hdf5-format" title="Permalink to this heading">#</a></h4>
+<p>In HDF5 I/O mode (<code class="docutils literal notranslate"><span class="pre">output_file_format</span></code>: 0 in input parameter file), all the necessary parameters should be saved in one single <code class="docutils literal notranslate"><span class="pre">.h5</span></code> file, with exactly the same name of dataset with parameter name written above.
+The dimension of dataset should be the same with <code class="docutils literal notranslate"><span class="pre">n_rtp</span></code> in input parameter file.
+Please refer the <code class="docutils literal notranslate"><span class="pre">examples/inversion_small/make_test_model.py</span></code> for details.</p>
+</section>
+<section id="initial-model-file-in-ascii-format">
+<h4>initial model file in ASCII format<a class="headerlink" href="#initial-model-file-in-ascii-format" title="Permalink to this heading">#</a></h4>
+<p>In ASCII I/O mode (<code class="docutils literal notranslate"><span class="pre">output_file_format</span></code>: 1 in input parameter file), all the necessary parameters should be save in one single ASCII file.
+The number of rows in the file need to be equivalent with the number of global nodes (i.e. n_rtp[0]*n_rtp[1]*n_rtp[2]).</p>
+<p>The node order should be:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># write nodes in rtp</span>
+    <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rtp</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span> <span class="c1"># number of nodes on r direction</span>
+        <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rtp</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span> <span class="c1"># number of nodes on t direction</span>
+            <span class="k">for</span> <span class="n">ip</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rtp</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span> <span class="c1"># number of nodes on p direction</span>
+                <span class="c1"># write out parameters</span>
+                <span class="c1"># eta xi zeta fun fac_a fac_b fac_c fac_f</span>
+
+</pre></div>
+</div>
+<p>Complete example may be found <code class="docutils literal notranslate"><span class="pre">examples/inversion_small_ASCII/make_test_model.py</span></code>.</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="output-files">
+<h2>Output files<a class="headerlink" href="#output-files" title="Permalink to this heading">#</a></h2>
+<p>Calculated travel times at the stations will be writen in <code class="docutils literal notranslate"><span class="pre">(source</span> <span class="pre">receiver</span> <span class="pre">file)_out.dat</span></code> on the column for travel times.</p>
+<p>Volumetric result data files are saved in OUTPUT_FILES directory.</p>
+<p>As the node order in the output file is not in the global domain but each subdomains, it is necessary to do a small post-processing for extracting slices.
+<code class="docutils literal notranslate"><span class="pre">utils/tomoatt_data_retrieval.py</span></code> includes functions for this post processing.
+Please refer the concrete example in <code class="docutils literal notranslate"><span class="pre">inversion_small/data_post_process.py</span></code> for HDF5 mode, and <code class="docutils literal notranslate"><span class="pre">inversion_small_ASCII/data_post_process.py</span></code> for ASCII mode.</p>
+<p>Only the final iteration result will be saved in 3D matrix form as <code class="docutils literal notranslate"><span class="pre">final_model.h5</span></code> or <code class="docutils literal notranslate"><span class="pre">final_model.dat</span></code>, thus it is not necessary to do post-processing for the final result.</p>
+<section id="hdf5-i-o-mode">
+<h3>HDF5 I/O mode<a class="headerlink" href="#hdf5-i-o-mode" title="Permalink to this heading">#</a></h3>
+<p>In HDF5 mode, the code will carry out collective writing from all MPI processes into one single output file, which will try to maximize the I/O bandwidth for efficient I/O.</p>
+<p>TomoATT produces output files like below:</p>
+<ul class="simple">
+<li><p>out_data_grid.h5 : grid coordinate and connectivity data</p></li>
+<li><p>out_data_sim.h5 : field data</p></li>
+<li><p>out_data_sim.xmf : XDMF index data for visualizing 3D data. This may be open by Paraview.</p></li>
+<li><p>final_model.h5 : final model parameters</p></li>
+</ul>
+<p>Travel time field for i-th source may be visualized by reading <code class="docutils literal notranslate"><span class="pre">OUTPUT_FILES/out_data_sim_i.xmf</span></code>.
+All the inversed parameters from all the sources and receivers are saved in <code class="docutils literal notranslate"><span class="pre">out_data_sim_0.xmf</span></code>.</p>
+<p>Internal composition of .h5 data may be indicated by <code class="docutils literal notranslate"><span class="pre">h5ls</span> <span class="pre">-r</span></code> command.
+The composition of out_data_grid.h5 is :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span>                        <span class="n">Group</span>
+<span class="o">/</span><span class="n">Mesh</span>                    <span class="n">Group</span>
+<span class="o">/</span><span class="n">Mesh</span><span class="o">/</span><span class="n">elem_conn</span>          <span class="n">Dataset</span> <span class="p">{</span><span class="mi">21609</span><span class="p">,</span> <span class="mi">9</span><span class="p">}</span>  <span class="c1"># node connectivity used for visualization</span>
+<span class="o">/</span><span class="n">Mesh</span><span class="o">/</span><span class="n">node_coords_p</span>      <span class="n">Dataset</span> <span class="p">{</span><span class="mi">26010</span><span class="p">}</span>     <span class="c1"># longitude [degree]</span>
+<span class="o">/</span><span class="n">Mesh</span><span class="o">/</span><span class="n">node_coords_r</span>      <span class="n">Dataset</span> <span class="p">{</span><span class="mi">26010</span><span class="p">}</span>     <span class="c1"># radious [km]</span>
+<span class="o">/</span><span class="n">Mesh</span><span class="o">/</span><span class="n">node_coords_t</span>      <span class="n">Dataset</span> <span class="p">{</span><span class="mi">26010</span><span class="p">}</span>     <span class="c1"># latiude [degree]</span>
+<span class="o">/</span><span class="n">Mesh</span><span class="o">/</span><span class="n">node_coords_x</span>      <span class="n">Dataset</span> <span class="p">{</span><span class="mi">26010</span><span class="p">}</span>     <span class="c1"># xyz coordinate in WGS84</span>
+<span class="o">/</span><span class="n">Mesh</span><span class="o">/</span><span class="n">node_coords_y</span>      <span class="n">Dataset</span> <span class="p">{</span><span class="mi">26010</span><span class="p">}</span>
+<span class="o">/</span><span class="n">Mesh</span><span class="o">/</span><span class="n">node_coords_z</span>      <span class="n">Dataset</span> <span class="p">{</span><span class="mi">26010</span><span class="p">}</span>
+<span class="o">/</span><span class="n">Mesh</span><span class="o">/</span><span class="n">procid</span>             <span class="n">Dataset</span> <span class="p">{</span><span class="mi">26010</span><span class="p">}</span>     <span class="c1"># mpi processor id</span>
+</pre></div>
+</div>
+<p>out_data_sim.h5 is :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">model</span>                   <span class="n">Group</span>
+<span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">eta_inv_000j</span>      <span class="n">Dataset</span> <span class="p">{</span><span class="mi">25000</span><span class="p">}</span> <span class="c1"># eta at j-th inversion</span>
+<span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">xi_inv_000j</span>       <span class="n">Dataset</span> <span class="p">{</span><span class="mi">25000</span><span class="p">}</span> <span class="c1"># xi</span>
+<span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">vel_inv_000j</span>      <span class="n">Dataset</span> <span class="p">{</span><span class="mi">25000</span><span class="p">}</span> <span class="c1"># velocity field at j-th inversion</span>
+</pre></div>
+</div>
+<p>then final_model.h5 is :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">eta</span>                      <span class="n">Dataset</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">}</span>
+<span class="n">vel</span>                      <span class="n">Dataset</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">}</span>
+<span class="n">xi</span>                       <span class="n">Dataset</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The internal composition of the final_model.h5 is exactly the same with the initial model file. Thus it is possible to use the final model file as the initial model file for the next run by specifying <code class="docutils literal notranslate"><span class="pre">initial_model_file</span></code> in input parameter file.</p>
+</section>
+<section id="ascii-i-o-mode">
+<h3>ASCII I/O mode<a class="headerlink" href="#ascii-i-o-mode" title="Permalink to this heading">#</a></h3>
+<p>In ASCII mode, code will be do independent writing, (i.e. each MPI process do I/O process sequencially) in a single output file.</p>
+<p>The files that TomoATT creates in OUPUT_FILES directory are :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">out_grid_conn</span><span class="o">.</span><span class="n">dat</span>                    <span class="c1"># node connectivity</span>
+<span class="n">out_grid_ptr</span><span class="o">.</span><span class="n">dat</span>                     <span class="c1"># grid coordinate lon (degree), lat (degree), radius (km)</span>
+<span class="n">out_grid_xyz</span><span class="o">.</span><span class="n">dat</span>                     <span class="c1"># grid coordinate in WGS84</span>
+<span class="n">eta_inv_000j</span><span class="o">.</span><span class="n">dat</span>                     <span class="c1"># eta</span>
+<span class="n">xi_inv_000j</span><span class="o">.</span><span class="n">dat</span>                      <span class="c1"># xi </span>
+<span class="n">vel_inv_000j</span><span class="o">.</span><span class="n">dat</span>                     <span class="c1"># velocity</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../install/Use_on_HPCs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">use on HPCs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../examples/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Examples</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-files">Input files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-parameter-file">1. input parameter file</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#domain">domain :</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#source">source :</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model">model :</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inversion">inversion :</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel">parallel :</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation">calculation :</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#output-setting">output_setting :</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#source-receiver-file">2. source receiver file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-model-file">3. initial model file</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inital-model-file-in-hdf5-format">inital model file in HDF5 format</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-model-file-in-ascii-format">initial model file in ASCII format</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">Output files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hdf5-i-o-mode">HDF5 I/O mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ascii-i-o-mode">ASCII I/O mode</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/tutorial/index.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2022, Mijian Xu, Masaru Nagaso.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
