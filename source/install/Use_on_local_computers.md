@@ -25,7 +25,7 @@ source activate tomoatt
 #### Install the required libraries in the created virtual environment
 
 ```
-conda install openmpi "hdf5=*=mpi_openmpi*" -c conda-forge
+conda install openmpi "hdf5=*=mpi_openmpi*" cmake -c conda-forge
 ```
 
 ### Compile and instal the dependencies from source code 
